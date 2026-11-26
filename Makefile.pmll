@@ -1,0 +1,37 @@
+# PMLL native checks for qforge-toolkit.
+# CUDA compile is host-side (no lease). Running a .cu binary requires a registered
+# GPU lease (see scripts/gpu_lease_run.sh). Do not run `make cuda-sm86-run` bare.
+CC      ?= gcc
+NVCC    ?= nvcc
+PYTHON  ?= python3
+CFLAGS  := -O2 -std=c11 -Wall -Wextra -Werror
+
+.PHONY: check py-check c-check asan-check cuda-sm86 cuda-sm86-run hygiene
+
+check: py-check c-check hygiene
+
+py-check:
+	$(PYTHON) -W error scripts/verify_pmll_gates.py
+	$(PYTHON) -O -W error scripts/verify_pmll_gates.py
+
+c-check:
+	@mkdir -p .build_tmp
+	$(CC) $(CFLAGS) c_core/pmll_sat_and_silo_upgrades.c -lm -o .build_tmp/test_pmll_upgrades && .build_tmp/test_pmll_upgrades
+	$(CC) $(CFLAGS) -shared -fPIC c_core/v167_woodbury_rump.c -lm -o .build_tmp/v167_woodbury_rump.so
+
+asan-check:
+	@mkdir -p .build_tmp
+	$(CC) $(CFLAGS) -fsanitize=address,undefined c_core/pmll_sat_and_silo_upgrades.c -lm -o .build_tmp/test_pmll_asan && .build_tmp/test_pmll_asan
+
+cuda-sm86:
+	@mkdir -p .build_tmp
+	$(NVCC) -O3 -arch=sm_86 --fmad=false cuda/cuda_pmll_v2.cu -o .build_tmp/pmll_sim_v2
+	@echo "Compiled .build_tmp/pmll_sim_v2. Run it only under a registered GPU lease, e.g."
+	@echo "  scripts/gpu_lease_run.sh --mib 512 --margin 1536 -- .build_tmp/pmll_sim_v2"
+
+cuda-sm86-run: cuda-sm86
+	@echo "Refusing to run CUDA un-leased from Make. Use scripts/gpu_lease_run.sh."
+	@exit 2
+
+hygiene:
+	PYTHONPATH=. $(PYTHON) -m qforge_pmll.cli hygiene-scan --root .

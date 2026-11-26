@@ -9,3 +9,6 @@ work/
 scratch/
 *.tgz
 *.tgz.sha256
+.build_tmp/
+*.so
+*.olean

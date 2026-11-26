@@ -1,0 +1,33 @@
+name: qforge-toolkit CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+jobs:
+  verify-stdlib-and-c11:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install toolkit (editable, dev)
+        run: pip install -e ".[dev]"
+      - name: Pytest
+        run: python -m pytest
+      - name: Cold-Start 10-Gate Verifier (Normal + Optimized -O)
+        run: |
+          python3 -W error scripts/verify_pmll_gates.py
+          python3 -O -W error scripts/verify_pmll_gates.py
+      - name: C11 ASan + UBSan Verification (PMLL Silo, VSIDS Heap, LBD+DRUP, Woodbury-Rump)
+        run: |
+          mkdir -p .build_tmp
+          gcc -O2 -std=c11 -Wall -Wextra -Werror -fsanitize=address,undefined c_core/pmll_sat_and_silo_upgrades.c -lm -o .build_tmp/test_pmll_asan
+          .build_tmp/test_pmll_asan
+          gcc -O2 -std=c11 -Wall -Wextra -Werror -shared -fPIC c_core/v167_woodbury_rump.c -lm -o .build_tmp/v167_woodbury_rump.so
+          rm -rf .build_tmp
+      - name: Public Repository Hygiene Gate
+        run: |
+          PYTHONPATH=. python3 -m qforge_pmll.cli hygiene-scan --root .

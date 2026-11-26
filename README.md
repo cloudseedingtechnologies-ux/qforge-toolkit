@@ -55,6 +55,39 @@ arguments in [`pmll_memory_mcp`](https://github.com/drQedwards/PPM/tree/main/mcp
 The sample export is generic on purpose: it describes the tools, not anyone's
 private lab notes. See [pmll/SCHEMA.md](pmll/SCHEMA.md).
 
+
+## PMLL modules (v173 merge)
+
+After an independent replay of a Constellation-crew kit (and a review of a
+same-day Neptune Elysium Prime archive), the following were folded in. Full
+credits and honesty labels: [ATTRIBUTION.md](ATTRIBUTION.md). Pinned hashes:
+[ORIGIN_PINNED.json](ORIGIN_PINNED.json).
+
+| Path | What it is | What it is not |
+| --- | --- | --- |
+| `qforge_pmll/` | Stdlib helpers: FWHT SimHash silo, contract-bound Q-promises, GF(2) Farkas duals, certificate-gated ERS reconsider, RFC 6962 Merkle + a pre-push hygiene scan | Not a proof of an open problem. Farkas duals are an *extension* of upstream `xor_sat.py`, not a function already in `drQedwards/pmll`. |
+| `c_core/` | C11 silo tokenizer / VSIDS+LBD+DRUP SAT upgrades, Woodbury–Rump helper. Compile with `gcc -std=c11`; ASan/UBSan is a separate target. | The C self-test banner may mention ASan even on a non-sanitized build — believe the compiler flags, not the banner. |
+| `cuda/cuda_pmll_v2.cu` | `sm_86` tiered Hot/Warm/Cold salience kernel. Compile with `nvcc -O3 -arch=sm_86 --fmad=false`. Run only under a registered GPU lease. | A successful self-print is not an independent numerical audit of every kernel path. |
+| `cuda/v168_shor_cyclic_kickmix_sm86.cu` | Classical Shor-phase *simulator* | Not a QPU result. No quantum credit. |
+| `tools/` | `circ_check`, `model_adapter`, a Lean token scan, and `guarded_run` | Not a substitute for `lean436-check.sh` (`rc=0` only). |
+| `contrib/neptune_pmll/` | Earlier V166/V170 audit/sync engines whose own self-tests passed under `python3` and `python3 -O` | The rest of the Neptune zip (cockpit, radio, "millennium solver" artifacts) is not shipped. |
+| `scripts/verify_pmll_gates.py` | Crew 10-gate / 8-mutant verifier, plus C compile when `gcc` is present | Independent tests in `tests/test_qforge_pmll.py` are the second check. |
+
+`"FINITE_EXPERIMENT": true` and `"clay_proof": 0` are mandatory on receipts.
+The 8.0× figure for the FWHT silo is a *size ratio* (128 B / 16 B), not a
+runtime speedup. Collision-bias numbers are fixture-dependent experiments.
+
+```bash
+PYTHONPATH=. python3 scripts/verify_pmll_gates.py
+PYTHONPATH=. python3 -O scripts/verify_pmll_gates.py
+PYTHONPATH=. python3 -m qforge_pmll.cli hygiene-scan --root .
+# C11 (writes .build_tmp/, gitignored)
+make -f Makefile.pmll asan-check
+```
+
+
+The GitHub Actions workflow lives at [ci/github-ci.yml](ci/github-ci.yml) until the publishing token has the `workflow` scope needed to place it under `.github/workflows/`.
+
 ## License
 
 MIT, to match Dr. Q's PMLL repositories.

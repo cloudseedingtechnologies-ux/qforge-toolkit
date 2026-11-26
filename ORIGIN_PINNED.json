@@ -1,0 +1,161 @@
+{
+  "FINITE_EXPERIMENT": true,
+  "clay_proof": 0,
+  "files": [
+    {
+      "dest": "qforge_pmll/__init__.py",
+      "origin": "crew-kit-v173 src/qforge_pmll/__init__.py",
+      "src_sha256": "2f1e924104f05be591c5e4dc0f9a397b802a68f85bfbcb5a0930bca47c26342b",
+      "dest_sha256": "2f1e924104f05be591c5e4dc0f9a397b802a68f85bfbcb5a0930bca47c26342b",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_pmll/cli.py",
+      "origin": "crew-kit-v173 src/qforge_pmll/cli.py",
+      "src_sha256": "f2dab9f7990be2c74e4bd3fc55b00fa7c2664c3f0f2f7c24d2494e27497e22ea",
+      "dest_sha256": "f2dab9f7990be2c74e4bd3fc55b00fa7c2664c3f0f2f7c24d2494e27497e22ea",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_pmll/ers_certified_reconsider.py",
+      "origin": "crew-kit-v173 src/qforge_pmll/ers_certified_reconsider.py",
+      "src_sha256": "abdc8326f7e51bc08909d2a8eb31dc2d50a13885382d2928308a271e83435626",
+      "dest_sha256": "abdc8326f7e51bc08909d2a8eb31dc2d50a13885382d2928308a271e83435626",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_pmll/gf2_farkas_decoder.py",
+      "origin": "crew-kit-v173 src/qforge_pmll/gf2_farkas_decoder.py",
+      "src_sha256": "75f164b58d8d21e516763d70c14646877b8241ae7317dd3a4e820bf3b6650b7e",
+      "dest_sha256": "75f164b58d8d21e516763d70c14646877b8241ae7317dd3a4e820bf3b6650b7e",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_pmll/merkle_anchor.py",
+      "origin": "crew-kit-v173 src/qforge_pmll/merkle_anchor.py",
+      "src_sha256": "197c9d7a65a801abc147e20d53949e94699a99d451f3e31913fd8d35b4f1e216",
+      "dest_sha256": "197c9d7a65a801abc147e20d53949e94699a99d451f3e31913fd8d35b4f1e216",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_pmll/silo_fwht.py",
+      "origin": "crew-kit-v173 src/qforge_pmll/silo_fwht.py",
+      "src_sha256": "1f182ba36e29d4c08193925d79ec02b3d5feb60398046329320bb8e90364f35e",
+      "dest_sha256": "1f182ba36e29d4c08193925d79ec02b3d5feb60398046329320bb8e90364f35e",
+      "scrubbed": false
+    },
+    {
+      "dest": "c_core/pmll_sat_and_silo_upgrades.c",
+      "origin": "crew-kit-v173 c_core/pmll_sat_and_silo_upgrades.c",
+      "src_sha256": "a34e75cca0aac544dcccba490c6d0bdad91d02a5e4b0c50e0e7699800cc07777",
+      "dest_sha256": "a34e75cca0aac544dcccba490c6d0bdad91d02a5e4b0c50e0e7699800cc07777",
+      "scrubbed": false
+    },
+    {
+      "dest": "c_core/v167_woodbury_rump.c",
+      "origin": "crew-kit-v173 c_core/v167_woodbury_rump.c",
+      "src_sha256": "8b4c6273af3144e890fc0e68e5ae04b93acde53e4407f9c67a111ebba3dc27b2",
+      "dest_sha256": "8795269b9241b8239eed93364bfec6f52e60e408315d08039d9c939646b88834",
+      "scrubbed": true
+    },
+    {
+      "dest": "cuda/cuda_pmll_v2.cu",
+      "origin": "crew-kit-v173 cuda/cuda_pmll_v2.cu",
+      "src_sha256": "96f4aa683b16ab5e62e4d3f308e1e9003c8447724acd52d951a9e4d6c0dd6cd5",
+      "dest_sha256": "96f4aa683b16ab5e62e4d3f308e1e9003c8447724acd52d951a9e4d6c0dd6cd5",
+      "scrubbed": false
+    },
+    {
+      "dest": "cuda/j1j2_otf_prefix_kernels.cu",
+      "origin": "crew-kit-v173 cuda/j1j2_otf_prefix_kernels.cu",
+      "src_sha256": "c6b708939d0b8277be3515bb61b15cd506011bc9a2391d56f3423432f8513293",
+      "dest_sha256": "c2d59d9b95af8dc6adff66873c13ffa2c02f3caed68de48ca8e9c5ac58559490",
+      "scrubbed": true
+    },
+    {
+      "dest": "cuda/v168_shor_cyclic_kickmix_sm86.cu",
+      "origin": "crew-kit-v173 cuda/v168_shor_cyclic_kickmix_3080ti.cu (renamed)",
+      "src_sha256": "eace9d4461bb55665a7acf60123e4a947aaef0bffd1ffd94a71b673b9a5327df",
+      "dest_sha256": "639cfa4e5b8f3fb98daa78a9949c79bfd9532e2f20554914604205917cc74d2d",
+      "scrubbed": true
+    },
+    {
+      "dest": "scripts/verify_pmll_gates.py",
+      "origin": "crew-kit-v173 verify_v173_all.py",
+      "src_sha256": "c8b44744af4619837a4f02d6749ec6ed22abd2795e1c69b911a5648c629fbeee",
+      "dest_sha256": "8ed4338c1aa638bc16037e187d1fd46d174aa1ba1465100b697fe27729f52723",
+      "scrubbed": true
+    },
+    {
+      "dest": "Makefile.pmll",
+      "origin": "crew-kit-v173 Makefile (as Makefile.pmll)",
+      "src_sha256": "4f5de62cc69c9b4f01567f53aa7c1f8db51a35835de98d61e7e82876dd2b62bc",
+      "dest_sha256": "4f5de62cc69c9b4f01567f53aa7c1f8db51a35835de98d61e7e82876dd2b62bc",
+      "scrubbed": false
+    },
+    {
+      "dest": ".github/workflows/ci.yml",
+      "origin": "crew-kit-v173 ci.yml",
+      "src_sha256": "99f8d5d1827253c4a3111ebb8b95cbeb579fb00ad7ea72c6b1d1f2da5eddfdd1",
+      "dest_sha256": "3cbc4715562f2679cbd87087cf9b493e7ca6c044e1bb01122493c78e1e85626a",
+      "scrubbed": true
+    },
+    {
+      "dest": "tools/circ_check.py",
+      "origin": "staged-charm-tools circ_check.py (openai-vpvnp-resweep / vpvnp-intake)",
+      "src_sha256": "0d18c12fe918166a4fafc5be4c5897194e673fb1361cf927c8198c339d0811cc",
+      "dest_sha256": "0d18c12fe918166a4fafc5be4c5897194e673fb1361cf927c8198c339d0811cc",
+      "scrubbed": false
+    },
+    {
+      "dest": "tools/model_adapter.py",
+      "origin": "staged-charm-tools model_adapter.py (openai-vpvnp-resweep / vpvnp-intake)",
+      "src_sha256": "c55abe5260ebbca9ab5ef359cfde72f1e52277720a8586f242c4ec8c346c797d",
+      "dest_sha256": "c55abe5260ebbca9ab5ef359cfde72f1e52277720a8586f242c4ec8c346c797d",
+      "scrubbed": false
+    },
+    {
+      "dest": "tools/r1_scan_and_stmt_eq.py",
+      "origin": "staged-charm-tools r1_scan_and_stmt_eq.py (openai-vpvnp-resweep / vpvnp-intake)",
+      "src_sha256": "9b3a892ad24c66b5318d0b7188f3b814dd9c958a2d2fe1824dc6084f67788d76",
+      "dest_sha256": "9b3a892ad24c66b5318d0b7188f3b814dd9c958a2d2fe1824dc6084f67788d76",
+      "scrubbed": false
+    },
+    {
+      "dest": "tools/guarded_run.py",
+      "origin": "staged-charm-tools guarded_run.py (openai-vpvnp-resweep / vpvnp-intake)",
+      "src_sha256": "ab54200d42c559cf2e1862e138572b048cf87d8b13da919baf643d49c85861d0",
+      "dest_sha256": "ab54200d42c559cf2e1862e138572b048cf87d8b13da919baf643d49c85861d0",
+      "scrubbed": false
+    },
+    {
+      "dest": "tools/test_circ_check.py",
+      "origin": "staged-charm-tools test_circ_check.py (openai-vpvnp-resweep / vpvnp-intake)",
+      "src_sha256": "69801cc95e10b35edde2a7d86cf0f78eb9da65ffc87a0008561234ee667e225f",
+      "dest_sha256": "69801cc95e10b35edde2a7d86cf0f78eb9da65ffc87a0008561234ee667e225f",
+      "scrubbed": false
+    },
+    {
+      "dest": "tools/test_model_adapter.py",
+      "origin": "staged-charm-tools test_model_adapter.py (openai-vpvnp-resweep / vpvnp-intake)",
+      "src_sha256": "5666f20efb6c3ee4703806a2444aace66e5300c8d0470e6cc89d092d5c222feb",
+      "dest_sha256": "5666f20efb6c3ee4703806a2444aace66e5300c8d0470e6cc89d092d5c222feb",
+      "scrubbed": false
+    },
+    {
+      "dest": "contrib/neptune_pmll/qforge_pmll_sync.py",
+      "origin": "neptune-elysium-prime-2026-11-26 python_engine/qforge_pmll_sync.py",
+      "src_sha256": "ffeec2db3950ace15a51d84cafb19ac3d8546eaafe04857430f050c11328caf2",
+      "dest_sha256": "8a63b92d54f6486594b30f45d30d58d7afcf3c211692cc4af6305a1c9eb33485",
+      "scrubbed": true
+    },
+    {
+      "dest": "contrib/neptune_pmll/pmll_drq_audit_engine.py",
+      "origin": "neptune-elysium-prime-2026-11-26 python_engine/pmll_drq_audit_engine.py",
+      "src_sha256": "0da4f0d90159b46050a0405be87b6d38a2b29fdae215b8bc5000ea5761625227",
+      "dest_sha256": "a876c2f1d77f3066d002239b2465637d6c484ea324ed31fda4dc0b643daacac8",
+      "scrubbed": true
+    }
+  ],
+  "note": "Pinned origins of merged files. Source archives themselves are not shipped. FINITE_EXPERIMENT=true, clay_proof=0. dest_sha256 is the file as committed (after typo/host-comment scrubs where flagged)."
+}

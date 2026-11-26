@@ -80,3 +80,28 @@ print(get_graph_stats("qforge-toolkit-sample"))
 
 If `pmll-memory-mcp` is not installed, `pmll.pmll_export` still validates the
 JSON against the published schema.
+
+## PMLL helpers and native checks
+
+```bash
+# 10-gate verifier (also under python -O)
+PYTHONPATH=. python3 scripts/verify_pmll_gates.py
+PYTHONPATH=. python3 -O scripts/verify_pmll_gates.py
+
+# Hygiene scan (private paths, token shapes, receipt honesty labels)
+PYTHONPATH=. python3 -m qforge_pmll.cli hygiene-scan --root .
+
+# C11 + ASan/UBSan (artifacts under .build_tmp/)
+make -f Makefile.pmll asan-check
+
+# CUDA: compile only. Running the binary needs a registered GPU lease.
+make -f Makefile.pmll cuda-sm86
+scripts/gpu_lease_run.sh --mib 512 --margin 1536 -- .build_tmp/pmll_sim_v2
+```
+
+`contrib/neptune_pmll/` engines are optional historical self-tests:
+
+```bash
+python3 contrib/neptune_pmll/pmll_drq_audit_engine.py
+python3 contrib/neptune_pmll/qforge_pmll_sync.py
+```

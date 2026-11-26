@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qforge-toolkit"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reusable lab infrastructure: receipts, ledgers, certified checkers, seals, and a PMLL memory bridge."
 readme = "README.md"
 license = {text = "MIT"}
@@ -21,13 +21,14 @@ pmll = ["pmll-memory-mcp"]
 
 [project.scripts]
 qforge = "qforge_toolkit.__main__:main"
+qforge-pmll = "qforge_pmll.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/cloudseedingtechnologies-ux/qforge-toolkit"
 PMLL = "https://github.com/drQedwards/PPM"
 
 [tool.setuptools.packages.find]
-include = ["qforge_toolkit*", "pmll*"]
+include = ["qforge_toolkit*", "pmll*", "qforge_pmll*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
