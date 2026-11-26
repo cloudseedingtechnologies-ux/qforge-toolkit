@@ -1,0 +1,47 @@
+{
+  "schema": "qforge.lab_index.v1",
+  "guardrails": [
+    "Never over-claim: a finite run is not a proof.",
+    "ADOPT only if exact and at least 10% faster on the complete task.",
+    "Seal a copy, leak-scan, and receipt from a fresh extract."
+  ],
+  "seals": [
+    {
+      "name": "QFORGE_TOOLKIT_SAMPLE.tgz",
+      "sha256": "",
+      "locations": [],
+      "note": "Illustrative placeholder; this sample ships no archive."
+    }
+  ],
+  "cards": [
+    {
+      "id": "CARD-SPEEDGATE",
+      "question": "Does the speed gate adopt only exact, complete-task wins of at least 10%?",
+      "ceiling": "FINITE_EXPERIMENT",
+      "status": "OPEN",
+      "falsifier": "A 6% faster exact candidate is adopted.",
+      "planted": ["A wrong candidate output is treated as exact."]
+    },
+    {
+      "id": "CARD-TEMPLE",
+      "question": "Does the Temple checker refuse a claimed bound tighter than mu - r^2/(zeta - mu)?",
+      "ceiling": "BOUNDED_CERTIFICATE",
+      "status": "OPEN",
+      "falsifier": "A tighter-than-Temple lower bound is accepted.",
+      "planted": ["zeta <= mu is accepted."]
+    }
+  ],
+  "open_problems": [
+    {
+      "id": "P-SPARSE-TEMPLE",
+      "title": "Sparse certified Temple enclosures for operators that do not fit densely in memory",
+      "status": "open"
+    },
+    {
+      "id": "P-LEAN-INERTIA",
+      "title": "Carry the exact rational inertia checker into a proof assistant kernel",
+      "status": "open"
+    }
+  ],
+  "claim_ledger": []
+}

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qforge-toolkit"
+version = "0.1.0"
+description = "Reusable lab infrastructure: receipts, ledgers, certified checkers, seals, and a PMLL memory bridge."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Cloud Seeder"}]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+pmll = ["pmll-memory-mcp"]
+
+[project.scripts]
+qforge = "qforge_toolkit.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/cloudseedingtechnologies-ux/qforge-toolkit"
+PMLL = "https://github.com/drQedwards/PPM"
+
+[tool.setuptools.packages.find]
+include = ["qforge_toolkit*", "pmll*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,827 @@
+{
+  "create_memory_node": [
+    {
+      "content": "Reusable lab infrastructure: receipts, ledgers, certified checkers, seals, and a PMLL bridge.",
+      "label": "qforge-toolkit",
+      "metadata": {
+        "kind": "toolkit"
+      },
+      "node_id": "mn-root-qforge-toolkit-1",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "A candidate is adopted only if it is exact and at least 10% faster on the complete task, with at least three paired repeats at the same thread count. Otherwise it is staged, or rejected if it is not exact.",
+      "label": "speedgate-rule",
+      "metadata": {
+        "date": "2026-11-01",
+        "tags": "policy,speedgate"
+      },
+      "node_id": "mn-mem-speedgate-rule-2",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "A sealed archive is a copy, never the live tree. Home prefixes are replaced with ~, a leak scan must pass, then MANIFEST and SHA256SUMS are packed. A receipt is taken from a fresh extract, not the retained one.",
+      "label": "seal-pipeline",
+      "metadata": {
+        "date": "2026-11-02",
+        "tags": "seal,receipt"
+      },
+      "node_id": "mn-mem-seal-pipeline-3",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Eigenvalue claims that are meant to be certified use two exact checkers: Sylvester inertia (LDL with 1-by-1 and 2-by-2 pivots, two pivot orders must agree) and Temple's inequality (a lower bound mu - r^2/(zeta - mu) when zeta > mu). Residual disks enclose an eigenvalue only for normal matrices.",
+      "label": "temple-inertia",
+      "metadata": {
+        "date": "2026-11-03",
+        "tags": "checker,certificate"
+      },
+      "node_id": "mn-mem-temple-inertia-4",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Prose and receipt claims are scanned for unbounded strength words. A hit is allowed when the same sentence limits the claim. not_claimed fields are never scanned.",
+      "label": "claim-linter",
+      "metadata": {
+        "date": "2026-11-04",
+        "tags": "linter,receipt"
+      },
+      "node_id": "mn-mem-claim-linter-5",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Sealed archive QFORGE_TOOLKIT_SAMPLE.tgz. sha256=",
+      "label": "QFORGE_TOOLKIT_SAMPLE.tgz",
+      "metadata": {
+        "kind": "seal",
+        "sha256": ""
+      },
+      "node_id": "mn-seal-QFORGE_TOOLKIT_SAMPLE.tgz-6",
+      "session_id": "qforge-toolkit-sample",
+      "type": "file"
+    },
+    {
+      "content": "Does the speed gate adopt only exact, complete-task wins of at least 10%?",
+      "label": "CARD-SPEEDGATE",
+      "metadata": {
+        "ceiling": "FINITE_EXPERIMENT",
+        "kind": "card",
+        "status": "OPEN"
+      },
+      "node_id": "mn-card-CARD-SPEEDGATE-7",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Does the Temple checker refuse a claimed bound tighter than mu - r^2/(zeta - mu)?",
+      "label": "CARD-TEMPLE",
+      "metadata": {
+        "ceiling": "BOUNDED_CERTIFICATE",
+        "kind": "card",
+        "status": "OPEN"
+      },
+      "node_id": "mn-card-CARD-TEMPLE-8",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Sparse certified Temple enclosures for operators that do not fit densely in memory",
+      "label": "P-SPARSE-TEMPLE",
+      "metadata": {
+        "kind": "open_problem",
+        "status": "open"
+      },
+      "node_id": "mn-prob-P-SPARSE-TEMPLE-9",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Carry the exact rational inertia checker into a proof assistant kernel",
+      "label": "P-LEAN-INERTIA",
+      "metadata": {
+        "kind": "open_problem",
+        "status": "open"
+      },
+      "node_id": "mn-prob-P-LEAN-INERTIA-10",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Never over-claim: a finite run is not a proof.",
+      "label": "guardrail",
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "node_id": "mn-guard-Never-over-claim-a-finite-run-i-11",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "ADOPT only if exact and at least 10% faster on the complete task.",
+      "label": "guardrail",
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "node_id": "mn-guard-ADOPT-only-if-exact-and-at-least-12",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Seal a copy, leak-scan, and receipt from a fresh extract.",
+      "label": "guardrail",
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "node_id": "mn-guard-Seal-a-copy-leak-scan-and-rece-13",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    }
+  ],
+  "create_memory_relation": [
+    {
+      "edge_id": "me-1",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-speedgate-rule-2",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-2",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-seal-pipeline-3",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-3",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-temple-inertia-4",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-4",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-claim-linter-5",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-5",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-seal-QFORGE_TOOLKIT_SAMPLE.tgz-6",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-6",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-card-CARD-SPEEDGATE-7",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-7",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-card-CARD-TEMPLE-8",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-8",
+      "relation": "relates_to",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-prob-P-SPARSE-TEMPLE-9",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-9",
+      "relation": "relates_to",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-prob-P-LEAN-INERTIA-10",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-10",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-guard-Never-over-claim-a-finite-run-i-11",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-11",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-guard-ADOPT-only-if-exact-and-at-least-12",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-12",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-guard-Seal-a-copy-leak-scan-and-rece-13",
+      "weight": 1.0
+    }
+  ],
+  "create_relation": [
+    {
+      "edge_id": "me-1",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-speedgate-rule-2",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-2",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-seal-pipeline-3",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-3",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-temple-inertia-4",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-4",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-mem-claim-linter-5",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-5",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-seal-QFORGE_TOOLKIT_SAMPLE.tgz-6",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-6",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-card-CARD-SPEEDGATE-7",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-7",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-card-CARD-TEMPLE-8",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-8",
+      "relation": "relates_to",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-prob-P-SPARSE-TEMPLE-9",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-9",
+      "relation": "relates_to",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-prob-P-LEAN-INERTIA-10",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-10",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-guard-Never-over-claim-a-finite-run-i-11",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-11",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-guard-ADOPT-only-if-exact-and-at-least-12",
+      "weight": 1.0
+    },
+    {
+      "edge_id": "me-12",
+      "relation": "contains",
+      "session_id": "qforge-toolkit-sample",
+      "source_id": "mn-root-qforge-toolkit-1",
+      "target_id": "mn-guard-Seal-a-copy-leak-scan-and-rece-13",
+      "weight": 1.0
+    }
+  ],
+  "edges": {
+    "me-1": {
+      "created_at": 1764000000.0,
+      "id": "me-1",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-mem-speedgate-rule-2",
+      "weight": 1.0
+    },
+    "me-10": {
+      "created_at": 1764000000.0,
+      "id": "me-10",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-guard-Never-over-claim-a-finite-run-i-11",
+      "weight": 1.0
+    },
+    "me-11": {
+      "created_at": 1764000000.0,
+      "id": "me-11",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-guard-ADOPT-only-if-exact-and-at-least-12",
+      "weight": 1.0
+    },
+    "me-12": {
+      "created_at": 1764000000.0,
+      "id": "me-12",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-guard-Seal-a-copy-leak-scan-and-rece-13",
+      "weight": 1.0
+    },
+    "me-2": {
+      "created_at": 1764000000.0,
+      "id": "me-2",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-mem-seal-pipeline-3",
+      "weight": 1.0
+    },
+    "me-3": {
+      "created_at": 1764000000.0,
+      "id": "me-3",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-mem-temple-inertia-4",
+      "weight": 1.0
+    },
+    "me-4": {
+      "created_at": 1764000000.0,
+      "id": "me-4",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-mem-claim-linter-5",
+      "weight": 1.0
+    },
+    "me-5": {
+      "created_at": 1764000000.0,
+      "id": "me-5",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-seal-QFORGE_TOOLKIT_SAMPLE.tgz-6",
+      "weight": 1.0
+    },
+    "me-6": {
+      "created_at": 1764000000.0,
+      "id": "me-6",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-card-CARD-SPEEDGATE-7",
+      "weight": 1.0
+    },
+    "me-7": {
+      "created_at": 1764000000.0,
+      "id": "me-7",
+      "metadata": {},
+      "relation": "contains",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-card-CARD-TEMPLE-8",
+      "weight": 1.0
+    },
+    "me-8": {
+      "created_at": 1764000000.0,
+      "id": "me-8",
+      "metadata": {},
+      "relation": "relates_to",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-prob-P-SPARSE-TEMPLE-9",
+      "weight": 1.0
+    },
+    "me-9": {
+      "created_at": 1764000000.0,
+      "id": "me-9",
+      "metadata": {},
+      "relation": "relates_to",
+      "source": "mn-root-qforge-toolkit-1",
+      "target": "mn-prob-P-LEAN-INERTIA-10",
+      "weight": 1.0
+    }
+  },
+  "nodes": {
+    "mn-card-CARD-SPEEDGATE-7": {
+      "access_count": 1,
+      "content": "Does the speed gate adopt only exact, complete-task wins of at least 10%?",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-card-CARD-SPEEDGATE-7",
+      "label": "CARD-SPEEDGATE",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "ceiling": "FINITE_EXPERIMENT",
+        "kind": "card",
+        "status": "OPEN"
+      },
+      "type": "concept"
+    },
+    "mn-card-CARD-TEMPLE-8": {
+      "access_count": 1,
+      "content": "Does the Temple checker refuse a claimed bound tighter than mu - r^2/(zeta - mu)?",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-card-CARD-TEMPLE-8",
+      "label": "CARD-TEMPLE",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "ceiling": "BOUNDED_CERTIFICATE",
+        "kind": "card",
+        "status": "OPEN"
+      },
+      "type": "concept"
+    },
+    "mn-guard-ADOPT-only-if-exact-and-at-least-12": {
+      "access_count": 1,
+      "content": "ADOPT only if exact and at least 10% faster on the complete task.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-guard-ADOPT-only-if-exact-and-at-least-12",
+      "label": "guardrail",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "type": "note"
+    },
+    "mn-guard-Never-over-claim-a-finite-run-i-11": {
+      "access_count": 1,
+      "content": "Never over-claim: a finite run is not a proof.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-guard-Never-over-claim-a-finite-run-i-11",
+      "label": "guardrail",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "type": "note"
+    },
+    "mn-guard-Seal-a-copy-leak-scan-and-rece-13": {
+      "access_count": 1,
+      "content": "Seal a copy, leak-scan, and receipt from a fresh extract.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-guard-Seal-a-copy-leak-scan-and-rece-13",
+      "label": "guardrail",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "type": "note"
+    },
+    "mn-mem-claim-linter-5": {
+      "access_count": 1,
+      "content": "Prose and receipt claims are scanned for unbounded strength words. A hit is allowed when the same sentence limits the claim. not_claimed fields are never scanned.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-mem-claim-linter-5",
+      "label": "claim-linter",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "date": "2026-11-04",
+        "tags": "linter,receipt"
+      },
+      "type": "note"
+    },
+    "mn-mem-seal-pipeline-3": {
+      "access_count": 1,
+      "content": "A sealed archive is a copy, never the live tree. Home prefixes are replaced with ~, a leak scan must pass, then MANIFEST and SHA256SUMS are packed. A receipt is taken from a fresh extract, not the retained one.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-mem-seal-pipeline-3",
+      "label": "seal-pipeline",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "date": "2026-11-02",
+        "tags": "seal,receipt"
+      },
+      "type": "note"
+    },
+    "mn-mem-speedgate-rule-2": {
+      "access_count": 1,
+      "content": "A candidate is adopted only if it is exact and at least 10% faster on the complete task, with at least three paired repeats at the same thread count. Otherwise it is staged, or rejected if it is not exact.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-mem-speedgate-rule-2",
+      "label": "speedgate-rule",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "date": "2026-11-01",
+        "tags": "policy,speedgate"
+      },
+      "type": "note"
+    },
+    "mn-mem-temple-inertia-4": {
+      "access_count": 1,
+      "content": "Eigenvalue claims that are meant to be certified use two exact checkers: Sylvester inertia (LDL with 1-by-1 and 2-by-2 pivots, two pivot orders must agree) and Temple's inequality (a lower bound mu - r^2/(zeta - mu) when zeta > mu). Residual disks enclose an eigenvalue only for normal matrices.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-mem-temple-inertia-4",
+      "label": "temple-inertia",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "date": "2026-11-03",
+        "tags": "checker,certificate"
+      },
+      "type": "note"
+    },
+    "mn-prob-P-LEAN-INERTIA-10": {
+      "access_count": 1,
+      "content": "Carry the exact rational inertia checker into a proof assistant kernel",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-prob-P-LEAN-INERTIA-10",
+      "label": "P-LEAN-INERTIA",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "kind": "open_problem",
+        "status": "open"
+      },
+      "type": "concept"
+    },
+    "mn-prob-P-SPARSE-TEMPLE-9": {
+      "access_count": 1,
+      "content": "Sparse certified Temple enclosures for operators that do not fit densely in memory",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-prob-P-SPARSE-TEMPLE-9",
+      "label": "P-SPARSE-TEMPLE",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "kind": "open_problem",
+        "status": "open"
+      },
+      "type": "concept"
+    },
+    "mn-root-qforge-toolkit-1": {
+      "access_count": 1,
+      "content": "Reusable lab infrastructure: receipts, ledgers, certified checkers, seals, and a PMLL bridge.",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-root-qforge-toolkit-1",
+      "label": "qforge-toolkit",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "kind": "toolkit"
+      },
+      "type": "concept"
+    },
+    "mn-seal-QFORGE_TOOLKIT_SAMPLE.tgz-6": {
+      "access_count": 1,
+      "content": "Sealed archive QFORGE_TOOLKIT_SAMPLE.tgz. sha256=",
+      "created_at": 1764000000.0,
+      "embedding": [],
+      "id": "mn-seal-QFORGE_TOOLKIT_SAMPLE.tgz-6",
+      "label": "QFORGE_TOOLKIT_SAMPLE.tgz",
+      "last_accessed": 1764000000.0,
+      "metadata": {
+        "kind": "seal",
+        "sha256": ""
+      },
+      "type": "file"
+    }
+  },
+  "schema": "pmll-memory-mcp.graph.v1",
+  "session_id": "qforge-toolkit-sample",
+  "set": [
+    {
+      "key": "toolkit:qforge",
+      "session_id": "qforge-toolkit-sample",
+      "value": "qforge-toolkit: receipts, ledgers, checkers, seals, PMLL export"
+    },
+    {
+      "key": "memory:speedgate-rule",
+      "session_id": "qforge-toolkit-sample",
+      "value": "A candidate is adopted only if it is exact and at least 10% faster on the complete task, with at least three paired repeats at the same thread count. Otherwise it is staged, or rejected if it is not exact."
+    },
+    {
+      "key": "memory:seal-pipeline",
+      "session_id": "qforge-toolkit-sample",
+      "value": "A sealed archive is a copy, never the live tree. Home prefixes are replaced with ~, a leak scan must pass, then MANIFEST and SHA256SUMS are packed. A receipt is taken from a fresh extract, not the retained one."
+    },
+    {
+      "key": "memory:temple-inertia",
+      "session_id": "qforge-toolkit-sample",
+      "value": "Eigenvalue claims that are meant to be certified use two exact checkers: Sylvester inertia (LDL with 1-by-1 and 2-by-2 pivots, two pivot orders must agree) and Temple's inequality (a lower bound mu - r^2/(zeta - mu) when zeta > mu). Residual disks enclose an eigenvalue only for normal matrices."
+    },
+    {
+      "key": "memory:claim-linter",
+      "session_id": "qforge-toolkit-sample",
+      "value": "Prose and receipt claims are scanned for unbounded strength words. A hit is allowed when the same sentence limits the claim. not_claimed fields are never scanned."
+    }
+  ],
+  "short_term": [
+    {
+      "key": "toolkit:qforge",
+      "value": "qforge-toolkit: receipts, ledgers, checkers, seals, PMLL export"
+    },
+    {
+      "key": "memory:speedgate-rule",
+      "value": "A candidate is adopted only if it is exact and at least 10% faster on the complete task, with at least three paired repeats at the same thread count. Otherwise it is staged, or rejected if it is not exact."
+    },
+    {
+      "key": "memory:seal-pipeline",
+      "value": "A sealed archive is a copy, never the live tree. Home prefixes are replaced with ~, a leak scan must pass, then MANIFEST and SHA256SUMS are packed. A receipt is taken from a fresh extract, not the retained one."
+    },
+    {
+      "key": "memory:temple-inertia",
+      "value": "Eigenvalue claims that are meant to be certified use two exact checkers: Sylvester inertia (LDL with 1-by-1 and 2-by-2 pivots, two pivot orders must agree) and Temple's inequality (a lower bound mu - r^2/(zeta - mu) when zeta > mu). Residual disks enclose an eigenvalue only for normal matrices."
+    },
+    {
+      "key": "memory:claim-linter",
+      "value": "Prose and receipt claims are scanned for unbounded strength words. A hit is allowed when the same sentence limits the claim. not_claimed fields are never scanned."
+    }
+  ],
+  "upsert_memory_node": [
+    {
+      "content": "Reusable lab infrastructure: receipts, ledgers, certified checkers, seals, and a PMLL bridge.",
+      "label": "qforge-toolkit",
+      "metadata": {
+        "kind": "toolkit"
+      },
+      "node_id": "mn-root-qforge-toolkit-1",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "A candidate is adopted only if it is exact and at least 10% faster on the complete task, with at least three paired repeats at the same thread count. Otherwise it is staged, or rejected if it is not exact.",
+      "label": "speedgate-rule",
+      "metadata": {
+        "date": "2026-11-01",
+        "tags": "policy,speedgate"
+      },
+      "node_id": "mn-mem-speedgate-rule-2",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "A sealed archive is a copy, never the live tree. Home prefixes are replaced with ~, a leak scan must pass, then MANIFEST and SHA256SUMS are packed. A receipt is taken from a fresh extract, not the retained one.",
+      "label": "seal-pipeline",
+      "metadata": {
+        "date": "2026-11-02",
+        "tags": "seal,receipt"
+      },
+      "node_id": "mn-mem-seal-pipeline-3",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Eigenvalue claims that are meant to be certified use two exact checkers: Sylvester inertia (LDL with 1-by-1 and 2-by-2 pivots, two pivot orders must agree) and Temple's inequality (a lower bound mu - r^2/(zeta - mu) when zeta > mu). Residual disks enclose an eigenvalue only for normal matrices.",
+      "label": "temple-inertia",
+      "metadata": {
+        "date": "2026-11-03",
+        "tags": "checker,certificate"
+      },
+      "node_id": "mn-mem-temple-inertia-4",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Prose and receipt claims are scanned for unbounded strength words. A hit is allowed when the same sentence limits the claim. not_claimed fields are never scanned.",
+      "label": "claim-linter",
+      "metadata": {
+        "date": "2026-11-04",
+        "tags": "linter,receipt"
+      },
+      "node_id": "mn-mem-claim-linter-5",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Sealed archive QFORGE_TOOLKIT_SAMPLE.tgz. sha256=",
+      "label": "QFORGE_TOOLKIT_SAMPLE.tgz",
+      "metadata": {
+        "kind": "seal",
+        "sha256": ""
+      },
+      "node_id": "mn-seal-QFORGE_TOOLKIT_SAMPLE.tgz-6",
+      "session_id": "qforge-toolkit-sample",
+      "type": "file"
+    },
+    {
+      "content": "Does the speed gate adopt only exact, complete-task wins of at least 10%?",
+      "label": "CARD-SPEEDGATE",
+      "metadata": {
+        "ceiling": "FINITE_EXPERIMENT",
+        "kind": "card",
+        "status": "OPEN"
+      },
+      "node_id": "mn-card-CARD-SPEEDGATE-7",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Does the Temple checker refuse a claimed bound tighter than mu - r^2/(zeta - mu)?",
+      "label": "CARD-TEMPLE",
+      "metadata": {
+        "ceiling": "BOUNDED_CERTIFICATE",
+        "kind": "card",
+        "status": "OPEN"
+      },
+      "node_id": "mn-card-CARD-TEMPLE-8",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Sparse certified Temple enclosures for operators that do not fit densely in memory",
+      "label": "P-SPARSE-TEMPLE",
+      "metadata": {
+        "kind": "open_problem",
+        "status": "open"
+      },
+      "node_id": "mn-prob-P-SPARSE-TEMPLE-9",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Carry the exact rational inertia checker into a proof assistant kernel",
+      "label": "P-LEAN-INERTIA",
+      "metadata": {
+        "kind": "open_problem",
+        "status": "open"
+      },
+      "node_id": "mn-prob-P-LEAN-INERTIA-10",
+      "session_id": "qforge-toolkit-sample",
+      "type": "concept"
+    },
+    {
+      "content": "Never over-claim: a finite run is not a proof.",
+      "label": "guardrail",
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "node_id": "mn-guard-Never-over-claim-a-finite-run-i-11",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "ADOPT only if exact and at least 10% faster on the complete task.",
+      "label": "guardrail",
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "node_id": "mn-guard-ADOPT-only-if-exact-and-at-least-12",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    },
+    {
+      "content": "Seal a copy, leak-scan, and receipt from a fresh extract.",
+      "label": "guardrail",
+      "metadata": {
+        "kind": "guardrail"
+      },
+      "node_id": "mn-guard-Seal-a-copy-leak-scan-and-rece-13",
+      "session_id": "qforge-toolkit-sample",
+      "type": "note"
+    }
+  ]
+}
