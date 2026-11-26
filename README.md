@@ -56,6 +56,34 @@ The sample export is generic on purpose: it describes the tools, not anyone's
 private lab notes. See [pmll/SCHEMA.md](pmll/SCHEMA.md).
 
 
+## Exact kernels K1–K7 (`qforge_toolkit.kernels`)
+
+Pure standard-library Python. Every kernel checks itself against an independent
+reference and ships planted-error traps; the suite receipt hashes only
+deterministic fields, so it is identical under `python` and `python -O`
+(tested in `tests/test_kernels.py` and in CI).
+
+| Kernel | Module | Independent check |
+| --- | --- | --- |
+| K1 exact circuit synthesis (MCSP and partial-function MCSP*) | `exact_synth`, `cdcl` | SAT answers re-simulated; every smaller size refuted by a RUP proof checked by `cdcl.check_rup_proof`; full 3-input B2 table equals a separate BFS |
+| K2 exact #SAT for THR∘XOR by integer Walsh–Hadamard | `fwht_sharpsat` | brute force; sign-rule and bit-order traps |
+| K3 conjugate gradient with certified error bound ‖x−x*‖ ≤ ‖r‖/σ | `certified_residual` | σ certified by an exact LDLᵀ of A−σI; exact symmetry check |
+| K4 light-cone closure for Z / ZZ | `lightcone` | exact equality with a dense simulator (rational orthogonal gates) |
+| K5 determinantal-representation certificates | `detcert` | Grenet per₂–per₄ checked by exact Laplace expansion of the determinant |
+| K6 random 3-SAT sweep | `sat_phase` | models checked, UNSAT answers RUP-checked |
+| K7 affine flats in GF(2)ⁿ | `flats_fast` | slow subset enumeration |
+
+```bash
+python -m qforge_toolkit kernels suite   # full receipt JSON (~10 s)
+python -m qforge_toolkit kernels quick   # skip the full 256-function tables
+python -m qforge_toolkit speedgate spec.json   # ADOPT / STAGE / REJECT a paired timing spec
+```
+
+Single-thread races recorded at intake (median of 3 pairs, complete task):
+SAT+RUP table vs BFS 0.758 (ADOPT), FWHT vs brute force 0.033 (ADOPT), flats 0.276 (ADOPT),
+light cone vs full simulation 0.005 (ADOPT); a slice-FWHT variant was 1.61× slower (STAGE, kept for record only).
+These are finite experiments; nothing here is a hardness or P vs NP statement.
+
 ## PMLL modules (v173 merge)
 
 After an independent replay of a Constellation-crew kit (and a review of a
@@ -86,7 +114,7 @@ make -f Makefile.pmll asan-check
 ```
 
 
-The GitHub Actions workflow lives at [ci/github-ci.yml](ci/github-ci.yml) until the publishing token has the `workflow` scope needed to place it under `.github/workflows/`.
+The GitHub Actions workflow lives at [ci/github-ci.yml](ci/github-ci.yml) until the publishing token has the `workflow` scope needed to place it under `.github/workflows/`. It runs pytest, the PMLL gates under `python` and `python -O`, the kernel receipt parity check, the C11 sanitizer build and the hygiene scan.
 
 ## License
 

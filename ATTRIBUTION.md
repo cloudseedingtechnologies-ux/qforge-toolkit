@@ -69,3 +69,13 @@ with standard axioms, the last declaration failed `ring` and depended on
 
 Nothing in this repository is a proof of an open problem, a physical QPU
 result, or an RSA-breaking claim.
+
+## Kernels K1–K7 (2026-11-26)
+
+`qforge_toolkit/kernels/` was written in-house during the Charmander V174 review of a
+Neptune Elysium Prime archive and replayed before merge (suite receipt identical under
+`python3` and `python3 -O`, all traps caught). Some modules improve on ideas in that
+archive's Gemini-authored V174 overlay (FWHT #SAT, flat audit); no overlay code is
+vendored. The FWHT identity follows the classical Walsh–Hadamard counting method
+(see R. Williams' work on circuit-analysis algorithms); exact synthesis follows Knuth's
+SAT encoding (TAOCP 7.1.2). Pins: `ORIGIN_PINNED.json`.

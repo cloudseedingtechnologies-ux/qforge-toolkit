@@ -155,6 +155,62 @@
       "src_sha256": "0da4f0d90159b46050a0405be87b6d38a2b29fdae215b8bc5000ea5761625227",
       "dest_sha256": "a876c2f1d77f3066d002239b2465637d6c484ea324ed31fda4dc0b643daacac8",
       "scrubbed": true
+    },
+    {
+      "dest": "qforge_toolkit/kernels/cdcl.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/cdcl.py",
+      "src_sha256": "4b28f01900be9cd7398f251e92bd1b33e2689ec84b55dbb9f4942689b1d74720",
+      "dest_sha256": "4b28f01900be9cd7398f251e92bd1b33e2689ec84b55dbb9f4942689b1d74720",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_toolkit/kernels/certified_residual.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/certified_residual.py",
+      "src_sha256": "17a41bbb298b241ccea417bcd25fe0a9571a0e7e48605e48bae56ccd72513142",
+      "dest_sha256": "17a41bbb298b241ccea417bcd25fe0a9571a0e7e48605e48bae56ccd72513142",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_toolkit/kernels/detcert.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/detcert.py",
+      "src_sha256": "443b01200e03fc6ced824e3aa9610383039bf9272df43e1b793551722b4d2cbd",
+      "dest_sha256": "443b01200e03fc6ced824e3aa9610383039bf9272df43e1b793551722b4d2cbd",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_toolkit/kernels/exact_synth.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/exact_synth.py",
+      "src_sha256": "23d20e38b39863a179b4a1743caa64958d0efcd1566b7b2a6483f6027c97bb7f",
+      "dest_sha256": "23d20e38b39863a179b4a1743caa64958d0efcd1566b7b2a6483f6027c97bb7f",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_toolkit/kernels/flats_fast.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/flats_fast.py",
+      "src_sha256": "616efc868e6c8f7f954e959082a3a9fa39481dd8a102a3867ae90f754c28558d",
+      "dest_sha256": "616efc868e6c8f7f954e959082a3a9fa39481dd8a102a3867ae90f754c28558d",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_toolkit/kernels/fwht_sharpsat.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/fwht_sharpsat.py",
+      "src_sha256": "ca95a7e83276af52c8a158875a6106587a1238c8b6ee0845f1caae07558766b4",
+      "dest_sha256": "ca95a7e83276af52c8a158875a6106587a1238c8b6ee0845f1caae07558766b4",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_toolkit/kernels/lightcone.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/lightcone.py",
+      "src_sha256": "e6014f87831fd40c12059e2e77d8a5ffb7a003e558bf477af731131d5fc8bc86",
+      "dest_sha256": "e6014f87831fd40c12059e2e77d8a5ffb7a003e558bf477af731131d5fc8bc86",
+      "scrubbed": false
+    },
+    {
+      "dest": "qforge_toolkit/kernels/sat_phase.py",
+      "origin": "charmander-v174 neptune python_engine/charm_lab/sat_phase.py",
+      "src_sha256": "8e80078057d9853573cea5eb93fa41d6c0e770e48ee97715cec11486cde6ffa5",
+      "dest_sha256": "8e80078057d9853573cea5eb93fa41d6c0e770e48ee97715cec11486cde6ffa5",
+      "scrubbed": false
     }
   ],
   "note": "Pinned origins of merged files. Source archives themselves are not shipped. FINITE_EXPERIMENT=true, clay_proof=0. dest_sha256 is the file as committed (after typo/host-comment scrubs where flagged)."

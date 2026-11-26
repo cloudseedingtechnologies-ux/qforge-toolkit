@@ -21,6 +21,11 @@ jobs:
         run: |
           python3 -W error scripts/verify_pmll_gates.py
           python3 -O -W error scripts/verify_pmll_gates.py
+      - name: Kernel receipt parity (python vs python -O)
+        run: |
+          a=$(python -m qforge_toolkit kernels suite | python -c 'import json,sys; print(json.load(sys.stdin)["receipt_sha256"])')
+          b=$(python -O -m qforge_toolkit kernels suite | python -c 'import json,sys; print(json.load(sys.stdin)["receipt_sha256"])')
+          echo "normal=$a optimized=$b"; test -n "$a" && test "$a" = "$b"
       - name: C11 ASan + UBSan Verification (PMLL Silo, VSIDS Heap, LBD+DRUP, Woodbury-Rump)
         run: |
           mkdir -p .build_tmp

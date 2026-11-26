@@ -14,6 +14,7 @@ COMMANDS = {
     "ledger": "qforge_toolkit.ledger",
     "card": "qforge_toolkit.task_card",
     "speedgate": "qforge_toolkit.speedgate",
+    "kernels": "qforge_toolkit.kernels.suite",
     "index": "qforge_toolkit.lab_index",
     "journal": "qforge_toolkit.journal",
     "gpu-lease": "qforge_toolkit.gpu_lease",

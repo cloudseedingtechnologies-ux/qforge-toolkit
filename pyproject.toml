@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qforge-toolkit"
-version = "0.2.0"
+version = "0.3.0"
 description = "Reusable lab infrastructure: receipts, ledgers, certified checkers, seals, and a PMLL memory bridge."
 readme = "README.md"
 license = {text = "MIT"}
