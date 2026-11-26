@@ -114,7 +114,7 @@ make -f Makefile.pmll asan-check
 ```
 
 
-The GitHub Actions workflow lives at [ci/github-ci.yml](ci/github-ci.yml) until the publishing token has the `workflow` scope needed to place it under `.github/workflows/`. It runs pytest, the PMLL gates under `python` and `python -O`, the kernel receipt parity check, the C11 sanitizer build and the hygiene scan.
+CI: [`.github/workflows/ci.yml`](.github/workflows/ci.yml) (mirrored at [ci/github-ci.yml](ci/github-ci.yml)) runs pytest, the PMLL gates under `python` and `python -O`, the kernel receipt parity check, the C11 sanitizer build and the hygiene scan.
 
 ## License
 
